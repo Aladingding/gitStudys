@@ -7,3 +7,8 @@ resouse/dontup/
 .svn
 .idea
 dist
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
