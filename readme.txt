@@ -9,3 +9,6 @@ commend line study
 提交测试打算
 
 Creating a new branch is quick.创建了一个dev新的分支
+
+
+Creating a new branch is quick AND simple. 新建冲突分支
