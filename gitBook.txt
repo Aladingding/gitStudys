@@ -1,0 +1,143 @@
+
+
+
+$ mkdir learngit
+创建一个版本库
+
+$ cd learngit
+跳转到该版本库
+
+
+$ git add readme.txt
+添加一个文件到仓库
+执行上面的命令，没有任何显示，这就对了，Unix的哲学是“没有消息就是好消息”，说明添加成功。
+
+·  git add -A  提交所有变化
+
+·  git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+
+·  git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+
+
+所以，git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit就可以一次性把暂存区的所有修改提交到分支。
+
+
+
+新增了修改内容并提交到了缓存区，想要撤销
+git add readme.txt
+git reset HEAD 
+git reset -- readme.txt
+
+
+
+
+删除文件
+$ git add test.txt
+
+$ git status
+$ git commit -m "add test.txt"
+$ rm test.txt
+
+从版本库删除
+$ git rm test.txt
+rm 'test.txt'
+
+复原不删除了
+$ git checkout -- test.txt
+命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
+
+
+配置账户信息
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。
+
+注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+
+$ git commit -m "wrote a readme file"
+提交文件到仓库
+
+
+$ git status
+查看仓库状态
+
+$ git diff readme.txt 
+文件对比
+
+$ git log
+查看提交日志
+
+$ git log --pretty=oneline
+
+$ git reset --hard HEAD^
+回退到上一个版本
+首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交1094adb...（注意我的提交ID和你的肯定不一样），上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+
+$ git reset --hard 1094a
+回到固定的某个版本，只要窗口还未关闭
+最新的那个版本append GPL已经看不到了！好比你从21世纪坐时光穿梭机来到了19世纪，想再回去已经回不去了，肿么办？
+
+办法其实还是有的，只要上面的命令行窗口还没有被关掉，你就可以顺着往上找啊找啊，找到那个append GPL的commit id是1094adb...，于是就可以指定回到未来的某个版本：
+
+$ git reflog
+后悔药
+在Git中，总是有后悔药可以吃的。当你用$ git reset --hard HEAD^回退到add distributed版本时，再想恢复到append GPL，就必须找到append GPL的commit id。Git提供了一个命令git reflog用来记录你的每一次命令：
+
+
+
+$ pwd
+/Users/michael/learngit
+显示当前目录
+
+如果你使用Windows系统，为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文。
+
+
+git init
+初始化仓库
+
+ls -ah
+如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。
+
+
+$ touch+文件名
+创建文件
+
+vi+文件名，新建一个文件并进入编辑状态（如果文件已存在，则直接进入编辑状态）
+
+
+输入i直接进入编辑模式，esc 退出编辑
+
+1，q 退出编辑，如果文本内容被修改过，则会报错
+
+2，q! 强制退出编辑，如果文本内容被修改过，会丢弃此次的修改
+
+3，x 退出编辑并保存
+
+
+
+创建远程仓库
+
+
+用户主目录里找到.ssh目录，就是
+C:\Users\80011266\.ssh当前账户下的
+
+
+提交本地分支代码到远程仓库
+$ git push -u origin master
+
+…or create a new repository on the command line
+echo "# gitStudy" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Aladingding/gitStudy.git
+git push -u origin master
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/Aladingding/gitStudy.git
+git push -u origin master
+
+
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
