@@ -10,4 +10,4 @@ commend line study
 
 Creating a new branch is quick.创建了一个dev新的分支
 
-Creating a new branch is quick & simple.
+Creating a new branch is quick and simple.
