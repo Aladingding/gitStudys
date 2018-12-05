@@ -12,4 +12,8 @@ Creating a new branch is quick.创建了一个dev新的分支
 
 Creating a new branch is quick and simple.
 
-新增一行直接使用git commit 命令提交，但是未git add,这样是不会提交成功的,三字 
+新增一行直接使用git commit 命令提交，但是未git add,这样是不会提交成功的,三字
+
+
+修复了一个bug，临时修复bug号  issue-bug-101
+
