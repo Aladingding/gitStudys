@@ -1,4 +1,4 @@
-名词翻译
+名词翻译 translateWord.txt
 Your branch is up to date with 'origin/master'.
 你的分支是最新的源码/主干
 
@@ -6,3 +6,37 @@ Untracked file 表示改文件在工作区新增，但并未git add到stage缓�
 
 New add line
 
+New add two lines
+
+Changes not staged for commit:
+用于提交的更改并未更新到存储区（更改仅仅停留在工作区，本地文件，并未add到缓存区，所以此时直接 git commit -m 'xxx'是读取不到该变更的）
+
+
+$ git commit -m '6th commit'
+On branch master 第六次提交在主干分支上
+Your branch is ahead of 'origin/master' by 1 commit.
+本地仓库 有一个commit ahead领先于原来的master，就是本地仓库有一个提交，比远程仓库要先进一个commit。
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        modified:   translateWord.txt
+no changes added to commit
+
+
+
+
+
+
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#    modified:   conf/gitolite.conf
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+说明没有文件需要commit，但是本地仓库 有一个commit ahead原来的master，
+就是本地仓库有一个提交，比远程仓库要先进一个commit。
+git push origin master之后，再用git staus，
+打印信息为：# On branch master
+nothing to commit (working directory clean)
