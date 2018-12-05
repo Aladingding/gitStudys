@@ -58,6 +58,9 @@ $ git commit -m "wrote a readme file"
 提交文件到仓库
 
 
+提交本地分支代码到远程仓库
+$ git push -u origin master
+
 $ git status
 查看仓库状态
 
@@ -122,8 +125,7 @@ vi+文件名，新建一个文件并进入编辑状态（如果文件已存在�
 C:\Users\80011266\.ssh当前账户下的
 
 
-提交本地分支代码到远程仓库
-$ git push -u origin master
+
 
 …or create a new repository on the command line
 echo "# gitStudy" >> README.md
