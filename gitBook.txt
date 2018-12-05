@@ -283,3 +283,11 @@ Git命令（或者所有的shell命令中）中出现括“（）”时系统把
 git add markdown" "Git"(1).md
 Or
 git add markdown" "Git\(1\).md
+
+
+
+删除远程分支
+可以用git push origin :dev 删除远程分支dev，origin和:dev之间有空格
+
+本地用git branch -d dev删除dev分支
+本地操作完之后，用git push origin master推送到远程GitHub上就行。
