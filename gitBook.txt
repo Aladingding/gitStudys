@@ -255,3 +255,31 @@ Git鼓励大量使用分支：
 
 
 提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别：
+
+
+当你要删除文件的时候，可以采用命令：rm test.txt
+
+这个时候有两种情况
+
+第一种情况:的确要把test.txt删掉，那么可以执行
+                   git rm test.txt
+                   git commit -m "remove test.txt"
+                   文件被删除，且删除记录上传本地库
+
+第二种情况:误删文件，想恢复，这时候还没有commit -m "remove test.txt"，执行git checkout test.txt将文件恢复。
+
+如果执行完git commit -m "remove test.txt"后就不能用checkout恢复了，得用git reset --hard HEAD^
+
+
+
+我要添加markdown Git（1）这个文件。操作是：git add markdown" "Git(1)
+
+系统报错：bash:syntax error near unexpected token ('
+经过查询，找到了报错的原因。
+
+Git命令（或者所有的shell命令中）中出现括“（）”时系统把它看做一个有特殊意义的命令从而尝试去执行它。因此如果文件名中出现括号，系统找不到括号里要执行的命令就会报错。我们要让系统忽略括号的特殊意义，方法是用“”双引号把文件名括起来，或者用转义符将括号转义.
+
+正确的做法是：
+git add markdown" "Git"(1).md
+Or
+git add markdown" "Git\(1\).md
