@@ -1,0 +1,17 @@
+$ git mv README.md README
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    renamed:    README.md -> README
+其实，运行 git mv 就相当于运行了下面三条命令：
+
+$ mv README.md README
+$ git rm README.md
+$ git add README
+
+
+ 两者唯一的区别是，mv 是一条命令而另一种方式需要三条命令，直接用 git mv 轻便得多。 不过有时候用其他工具批处理改名的话，要记得在提交前删除老的文件名，再添加新的文件名。
+
+xiu
