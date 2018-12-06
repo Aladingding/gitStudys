@@ -1,14 +1,20 @@
-﻿node_modules/
-build/
+﻿# node
+node_modules/
 npm-debug.log
-resouse/dontup/
-参考文件
-.idea
-.svn
-.idea
-dist
 
-# Windows:
+# svn
+.svn
+
+# IDE
+.idea/
+.idea
+
+# Windows
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Mac OS
+
+
+
